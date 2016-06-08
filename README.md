@@ -1,4 +1,4 @@
-# [Electron](http://http://electron.atom.io/)  + [Babel](https://babeljs.io/)  + [Elm](http://elm-lang.org/)  app boilerplate.
+# [Electron](http://electron.atom.io/)  + [Babel](https://babeljs.io/)  + [Elm](http://elm-lang.org/)  app boilerplate.
 
 Simple app based on Elm websockets example, but with Electron as "backend".
 
