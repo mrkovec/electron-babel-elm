@@ -2,7 +2,7 @@
 
 Simple app based on Elm websockets example, but with Electron as "backend". 
 
-The Elm part is in fact copy of [this Elm Architecture example](https://github.com/evancz/elm-architecture-tutorial/blob/master/examples/7-websockets.elm), with minimal adjustments, to allow it to communicate nicely with Electron thru portals.
+The Elm part is in fact copy of [this](https://github.com/evancz/elm-architecture-tutorial/blob/master/examples/7-websockets.elm) [Elm Architecture](https://github.com/evancz/elm-architecture-tutorial/) example, with minimal adjustments, to allow it to communicate nicely with Electron thru portals.
 
 ```bash
 npm install -g elm
