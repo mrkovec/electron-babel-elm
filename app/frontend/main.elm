@@ -39,7 +39,7 @@ update msg {input, messages} =
       (Model newInput messages, Cmd.none)
 
     Send ->
-      (Model "" messages, Ports.msgToElectron input)
+      if input /= ""  then (Model "" messages, Ports.msgToElectron input) else (Model input messages, Cmd.none)
 
     NewMessage str ->
       (Model input (str :: messages), Cmd.none)

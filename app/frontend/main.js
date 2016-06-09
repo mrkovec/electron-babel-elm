@@ -17,10 +17,8 @@ window.onload = () => {
   })
 
   // after every DOM change manually registering new elements for mdl
-  let observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
+  let observer = new MutationObserver(() => {
       componentHandler.upgradeElements(appcontainer.querySelectorAll('[class*="mdl-"]'))
-    })
   })
   observer.observe(appcontainer, { attributes: true, childList: true, characterData: true })
 }
