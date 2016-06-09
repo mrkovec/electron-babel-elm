@@ -16,7 +16,7 @@ window.onload = () => {
     app.ports.msgFromElectron.send(msg)
   })
 
-  // after ewery DOM change manualy registering new elements for mdl
+  // after every DOM change manually registering new elements for mdl
   let observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       componentHandler.upgradeElements(appcontainer.querySelectorAll('[class*="mdl-"]'))
