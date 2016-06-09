@@ -14,7 +14,6 @@ main =
     , subscriptions = subscriptions
     }
 
-
 -- MODEL
 
 type alias Model =
@@ -46,25 +45,33 @@ update msg {input, messages} =
       (Model input (str :: messages), Cmd.none)
 
 
-
 -- SUBSCRIPTIONS
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
   Ports.msgFromElectron NewMessage
 
-
 -- VIEW
 
 view : Model -> Html Msg
 view model =
-  div []
-    [ input [onInput Input] []
-    , button [onClick Send] [text "Send"]
-    , div [] (List.map viewMessage (List.reverse model.messages))
+  div [ class "mdl-layout mdl-js-layout" ]
+    [
+    div [ class "mdl-textfield mdl-js-textfield mdl-textfield--floating-label" ]
+      [
+      input [ class "mdl-textfield__input", onInput Input ] []
+      , label [ class "mdl-textfield__label" ] [ text "Shout" ]
+      ]
+    , span []
+      [
+      button [ class "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", onClick Send ] [ text "Send" ]
+      ]
+    , ul [ class "mdl-list" ] (List.map viewMessage (List.reverse model.messages))
     ]
-
 
 viewMessage : String -> Html msg
 viewMessage msg =
-  div [] [ text msg ]
+  li [ class "mdl-list__item" ]
+    [
+    span [ class "mdl-list__item-primary-content" ] [ text msg ]
+    ]
