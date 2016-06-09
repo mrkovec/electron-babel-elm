@@ -80,6 +80,7 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+*.cmd
 
 # Windows shortcuts
 *.lnk
