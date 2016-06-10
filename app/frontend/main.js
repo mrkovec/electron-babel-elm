@@ -10,10 +10,10 @@ window.onload = () => {
 
   // ports <=> ipcRenderer
   app.ports.msgToElectron.subscribe((msg) => {
-    IpcRenderer.send('msg', msg)
+    IpcRenderer.send(msg.msg, msg.body)
   })
-  IpcRenderer.on('msg', (event, msg) => {
-    app.ports.msgFromElectron.send(msg)
+  IpcRenderer.on('input', (event, msg) => {
+    app.ports.msgFromElectron.send({msg: 'input', body: msg})
   })
 
   // after every DOM change manually registering new elements for mdl

@@ -13,10 +13,17 @@ App.on('ready', () => {
   mainWindow = new BrowserWindow({width: 800, height: 600})
   mainWindow.loadURL('file://' + __dirname + '/../frontend/index.html')
   // mainWindow.webContents.openDevTools()
+
   mainWindow.on('closed', () => {
     mainWindow = null
   })
-  IpcMain.on('msg', (event, msg) => {
-    event.sender.send('msg', msg.toUpperCase())
+  IpcMain.on('input', (event, msg) => {
+    event.sender.send('input', msg.toUpperCase())
+  })
+  IpcMain.on('error', (event, msg) => {
+    console.log(msg)
+  })
+  IpcMain.on('quit', (event, msg) => {
+    App.quit()
   })
 })

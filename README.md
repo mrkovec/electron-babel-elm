@@ -12,3 +12,6 @@ npm install
 elm make app/frontend/main.elm --output app/frontend/elm.js --yes
 npm start
 ```
+
+![Alt text](https://github.com/mrkovec/electron-babel-elm/raw/master/screen.gif "screenshot")
+
