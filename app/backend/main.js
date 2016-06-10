@@ -21,7 +21,7 @@ App.on('ready', () => {
     event.sender.send('input', msg.toUpperCase())
   })
   IpcMain.on('error', (event, msg) => {
-    console.log(msg)
+    console.error(msg)
   })
   IpcMain.on('quit', (event, msg) => {
     App.quit()
