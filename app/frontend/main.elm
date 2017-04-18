@@ -1,6 +1,5 @@
 module MyApp exposing (..)
 import Html exposing (..)
-import Html.App as Html
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Html.Lazy exposing (lazy)
@@ -10,7 +9,7 @@ import Json.Decode exposing (string)
 import Ports
 
 
-main : Program Never
+main : Program Never Model Msg
 main =
   Html.program
     { init = init
